@@ -23,12 +23,12 @@ async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [
             [
-                InlineKeyboardButton('🔔 Updates 🤖', url='https://t.me/LazyDeveloper')
+                InlineKeyboardButton('🔔 Updates 🤖', url='https://t.me/ps_movies11')
             ],
             [
                 InlineKeyboardButton('🙆🏻 Help 🦾', url=f"https://t.me/{temp.U_NAME}?start=help"),
             ],[
-            InlineKeyboardButton('Watch Tutorial', url='https://youtube.com/LazyDeveloper')
+            InlineKeyboardButton('Watch Tutorial', url='https://t.me/ps_movies11')
             ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
@@ -46,12 +46,12 @@ async def start(client, message):
             InlineKeyboardButton('➕↖️ Add Me To Your Groups ↗️➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
             InlineKeyboardButton('🧞‍♀️ Search 🧐', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🔔 Updates 🤖', url='https://t.me/LazyDeveloper')
+            InlineKeyboardButton('🔔 Updates 🤖', url='https://t.me/ps_movies11')
             ],[
             InlineKeyboardButton('🙆🏻 Help 🦾', callback_data='help'),
             InlineKeyboardButton('♥️ About ♥️', callback_data='about')
             ],[
-            InlineKeyboardButton('Watch Tutorial', url='https://youtube.com/LazyDeveloper')
+            InlineKeyboardButton('Watch Tutorial', url='https://t.me/ps_movies11')
             ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -65,7 +65,7 @@ async def start(client, message):
         try:
             invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
         except ChatAdminRequired:
-            logger.error("Hey Sona, Ek dfa check kr lo ki main Channel mei Add hu ya nhi...!")
+            logger.error("ನೀವು ನನ್ನ ಮುಖ್ಯ ಚಾನಲ್‌ನಲ್ಲಿದ್ದೀರಾ ಅಥವಾ ಇಲ್ಲವೇ ಎಂಬುದನ್ನು ಮತ್ತೊಮ್ಮೆ ಪರಿಶೀಲಿಸಿ...! Check once again if you are in my Main Channel or not...!")
             return
         btn = [
             [
@@ -75,7 +75,7 @@ async def start(client, message):
             ],
              [
                 InlineKeyboardButton(
-                    "🦋 SUBSCRIBE YT Channel 🦋", url='https://youtube.com/@LazyDeveloperr'
+                    "🦋 SUBSCRIBE YT Channel 🦋", url='https://t.me/ps_movies11'
                 )
             ]
         ]
@@ -99,12 +99,12 @@ async def start(client, message):
             InlineKeyboardButton('➕↖️ Add Me To Your Groups ↗️➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
             InlineKeyboardButton('🧞‍♀️ Search 🧐', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🔔 Updates 🤖', url='https://t.me/LazyDeveloper')
+            InlineKeyboardButton('🔔 Updates 🤖', url='https://t.me/ps_movies11')
             ],[
             InlineKeyboardButton('🙆🏻 Help 🦾', callback_data='help'),
             InlineKeyboardButton('♥️ About ♥️', callback_data='about')
         ],[
-            InlineKeyboardButton('Watch Tutorial', url='https://youtube.com/LazyDeveloper')
+            InlineKeyboardButton('Watch Tutorial', url='https://t.me/ps_movies11')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -389,10 +389,10 @@ async def settings(client, message):
                 chat = await client.get_chat(grpid)
                 title = chat.title
             except:
-                await message.reply_text("Make sure I'm present in your group!!", quote=True)
+                await message.reply_text("Make sure I'm present in your group!! ನಿಮ್ಮ ಗುಂಪಿನಲ್ಲಿ ನಾನು ಇದ್ದೇನೆ ಎಂದು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ!!", quote=True)
                 return
         else:
-            await message.reply_text("I'm not connected to any groups!", quote=True)
+            await message.reply_text("I'm not connected to any groups! ನಾನು ಯಾವುದೇ ಗುಂಪುಗಳಿಗೆ ಸಂಪರ್ಕ ಹೊಂದಿಲ್ಲ!", quote=True)
             return
 
     elif chat_type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
